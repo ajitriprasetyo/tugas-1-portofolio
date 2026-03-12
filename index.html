@@ -1,189 +1,280 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aji — Penulis & Pemikir</title>
-    
-    <!-- Fonts: Playfair Display (Serif) & Outfit (Sans) -->
+    <title>Aji — Penulis & Ruang</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    
-    <!-- Navigation: Minimalist & Centered -->
     <nav class="navbar">
       <div class="container nav-wrapper">
-        <a href="#" class="logo">AJI.</a>
-        <ul class="nav-links">
-          <li><a href="#journal">Jurnal</a></li>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#book">Karya</a></li>
-          <li><a href="#contact">Kontak</a></li>
-        </ul>
+        <a href="#" class="logo">AJI<span>.</span></a>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#book">Karya</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+          <button
+            id="theme-toggle"
+            aria-label="Toggle Dark Mode"
+            style="cursor: pointer"
+          >
+            <svg
+              class="sun-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
 
-    <!-- Hero Section: Editorial Style -->
     <header class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <span class="eyebrow">Penulis & Pengamat Ruang</span>
-          <h1>Merangkai Kata,<br><i>Memaknai</i> Ruang.</h1>
-          <p class="lead">
-            Sebuah eksplorasi tentang bagaimana ruang fisik membentuk ruang batin kita. 
-            Menemukan diri sendiri di antara dinding-dinding yang kita bangun.
+      <div class="container hero-content">
+        <div class="hero-text reveal-up">
+          <p class="eyebrow">
+            Sebuah Perjalanan Menemukan Diri di Ruang Pribadi.
           </p>
-          <a href="#book" class="btn-primary">Lihat Karya Terbaru</a>
+          <h1 class="split-text">
+            Merangkai <i>Kata</i>,<br />Memaknai <i>Ruang</i>.
+          </h1>
+          <a href="#book" class="btn-primary">Jelajahi Karya</a>
         </div>
-        <div class="hero-visual">
-          <div class="image-reveal">
-            <img src="img/foto-aji1.jpeg" alt="Potret Aji" />
+        <div class="hero-visual reveal-up delay-1">
+          <div class="parallax-wrap">
+            <img
+              src="img/foto-aji1.jpeg"
+              alt="Aji"
+              class="parallax-img"
+              data-speed="0.15"
+            />
+          </div>
+          <div class="floating-box">
+            <p>"Ruang membentuk kita."</p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- About Section: Text Heavy & Narrative -->
     <section id="about" class="about-section">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-visual">
-             <img src="img/foto-aji2.jpeg" alt="Aji Writing" />
-             <div class="quote-box">
-               "Menulis adalah cara saya merawat ingatan yang hampir pudar."
-             </div>
+      <div class="container about-grid">
+        <div class="about-visual reveal-up">
+          <img src="img/foto-aji2.jpeg" alt="Aji Writing" class="portrait" />
+          <div class="stamp-wrapper">
+            <svg viewBox="0 0 100 100" class="rotating-text">
+              <path
+                d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                id="circle"
+                fill="none"
+              />
+              <text>
+                <textPath href="#circle">Est. 2024 • Aji Portfolio •</textPath>
+              </text>
+            </svg>
           </div>
-          <div class="about-narrative">
-            <h2 class="section-title">Di Balik Pena</h2>
-            <p>
-              Halo, saya Aji. Saya percaya bahwa setiap sudut rumah memiliki cerita, 
-              dan setiap cerita membutuhkan 'rumah' untuk bernaung.
-            </p>
-            <p>
-              Fokus tulisan saya berkisar pada <strong>psikologi ruang (environmental psychology)</strong> 
-              dan <strong>pengembangan diri</strong>. Di dunia yang semakin bising, 
-              saya mengajak pembaca untuk kembali menengok ke dalam—baik ke dalam rumah mereka, 
-              maupun ke dalam diri mereka sendiri.
-            </p>
-            <div class="signature">Aji T.P.</div>
-          </div>
+        </div>
+        <div class="about-narrative reveal-up delay-1">
+          <h2 class="section-title">Di Balik Pena</h2>
+          <p class="large-text">
+            Saya percaya setiap sudut rumah memiliki cerita. Di dunia yang
+            bising, saya mengajak Anda kembali menengok ke dalam.
+          </p>
+          <p class="muted-text">
+            Fokus tulisan saya berkisar pada psikologi ruang dan pengembangan
+            diri. Menemukan harmoni antara dinding yang kita bangun dan jiwa
+            yang bersemayam di dalamnya.
+          </p>
+          <div class="signature">Aji T.P.</div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Book Section: The Masterpiece -->
     <section id="book" class="featured-book-section">
       <div class="container">
-        <div class="section-header center">
-          <span class="tag-pill">Buku Terbaru</span>
-          <h2 class="section-title">My Home: My Self</h2>
-        </div>
+        <h2 class="section-title center reveal-up">Karya Saya</h2>
 
-        <div class="book-showcase-editorial">
-          <!-- Kolom Kiri: Cover Art -->
-          <div class="showcase-visual">
-            <div class="book-cover-wrapper">
-              <img src="img/sampul-buku.jpg" alt="Cover My Home My Self" class="main-cover" />
-            </div>
-            <div class="availability">
-              <span>Tersedia di:</span>
-              <div class="shop-badges">
-                <a href="#" class="shop-link">Shopee</a>
-                <a href="#" class="shop-link">Tokopedia</a>
-              </div>
-            </div>
+        <div class="book-showcase reveal-up">
+          <div class="book-cover-wrapper">
+            <img
+              src="img/sampul-buku.jpg"
+              alt="Cover My Home My Self"
+              class="main-cover"
+            />
           </div>
 
-          <!-- Kolom Kanan: Story & Context -->
           <div class="showcase-content">
-            <h3>Sebuah Perjalanan Menemukan Diri<br>di Ruang Pribadi.</h3>
+            <h3>My Home: My Self</h3>
             <p class="synopsis">
-              Pernahkah Anda merasa asing di rumah sendiri? Atau justru merasa dinding kamar Anda 
-              begitu mengerti kesedihan Anda? Buku ini bukan sekadar tentang desain interior, 
-              tapi tentang <em>interior hati</em>.
+              Membaca "My Home: My Self" adalah seperti masuk ke ruang hening di
+              tengah kebisingan. Aji Tri Prasetyo berhasil merangkai narasi yang
+              mengajak kita tidak hanya melihat rumah sebagai bangunan fisik,
+              tetapi sebagai perpanjangan dari jiwa kita sendiri.
             </p>
-            <p class="synopsis">
-              Dalam 160 halaman, kita akan membedah bagaimana menata barang sama dengan menata pikiran, 
-              dan bagaimana membereskan ruang adalah langkah awal membereskan hidup.
-            </p>
-            
-            <ul class="book-specs">
-              <li>
-                <span class="label">Penerbit</span>
-                <span class="val">C-Klik Media</span>
-              </li>
-              <li>
-                <span class="label">Rilis</span>
-                <span class="val">Februari 2024</span>
-              </li>
-              <li>
-                <span class="label">Genre</span>
-                <span class="val">Self-Development</span>
-              </li>
-            </ul>
+            <div class="shop-badges">
+              <a href="#" class="btn-outline">Shopee</a>
+              <a href="#" class="btn-outline">Tokopedia</a>
+            </div>
           </div>
         </div>
 
-        <!-- Horizontal Gallery Strip -->
-        <div class="visual-strip">
+        <div id="dynamic-portfolio" class="dynamic-grid reveal-up"></div>
+
+        <div class="visual-strip reveal-up">
           <div class="strip-item">
-            <img src="img/buku-satu.jpg" alt="Preview Halaman 1" />
-            <span class="caption">Bab 1: Pondasi Diri</span>
+            <img src="img/buku-satu.jpg" alt="Preview 1" />
           </div>
           <div class="strip-item">
-            <img src="img/buku-dua.jpg" alt="Preview Halaman 2" />
-            <span class="caption">Bab 3: Jendela Jiwa</span>
+            <img src="img/buku-dua.jpg" alt="Preview 2" />
           </div>
           <div class="strip-item">
-            <img src="img/buku-tiga.jpg" alt="Preview Halaman 3" />
-            <span class="caption">Epilog: Pulang</span>
+            <img src="img/buku-tiga.jpg" alt="Preview 3" />
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact Section: Minimalist -->
     <section id="contact" class="contact-section">
-      <div class="container contact-wrapper">
+      <div class="container contact-wrapper reveal-up">
         <div class="contact-text">
-          <h2>Mari Berdiskusi</h2>
-          <p>Tertarik untuk kolaborasi bedah buku, penulisan artikel, atau sekadar menyapa?</p>
-          <p class="email-display">hello@aji-writer.com</p>
+          <h2 class="huge-text">Mari<br />Bicara.</h2>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ajitriprasetyoo23@gmail.com"
+            target="_blank"
+            class="email-display"
+            >ajitriprasetyoo23@gmail.com</a
+          >
         </div>
-        
-        <form id="contact-form" class="minimal-form">
-          <div class="input-group">
-            <input type="text" id="name" name="name" placeholder="Nama Anda" required />
-          </div>
-          <div class="input-group">
-            <input type="email" id="email" name="email" placeholder="Alamat Email" required />
-          </div>
-          <div class="input-group">
-            <textarea id="message" name="message" rows="4" placeholder="Pesan Anda..." required></textarea>
-          </div>
-          <button type="submit" class="btn-outline">Kirim Pesan</button>
-          <div id="form-response"></div>
-        </form>
+
+        <div class="form-card">
+          <form id="contact-form" class="minimal-form">
+            <div class="input-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Nama Anda"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Pesan Anda..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">
+              Kirim Pesan &rarr;
+            </button>
+            <div id="form-response"></div>
+          </form>
+        </div>
       </div>
     </section>
 
     <footer>
-      <div class="container">
-        <div class="footer-content">
-          <span class="copyright">&copy; 2026 Aji Portfolio.</span>
-          <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Twitter</a>
-          </div>
+      <div class="container footer-content">
+        <span class="copyright">&copy; 2026 Aji Portfolio.</span>
+        <div class="socials">
+          <a
+            href="https://www.instagram.com/aji.story_"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="social-icon"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a
+            href="https://www.tiktok.com/@notzmood"
+            target="_blank"
+            aria-label="TikTok"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="social-icon"
+            >
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=ajitriprasetyoo23@gmail.com"
+            target="_blank"
+            aria-label="Email"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="social-icon"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>

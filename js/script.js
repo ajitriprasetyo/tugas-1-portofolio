@@ -1,59 +1,97 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Website Portofolio Siap!");
+  // 1. DARK MODE TOGGLE
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const htmlElement = document.documentElement;
 
-  // Smooth scroll statis navigation
-  const navLinks = document.querySelectorAll("nav ul li a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 70, // 70px offset for fixed header
-          behavior: "smooth",
-        });
-      }
+  // Check local storage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) htmlElement.setAttribute("data-theme", savedTheme);
+
+  themeToggleBtn.addEventListener("click", () => {
+    const currentTheme = htmlElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+
+    htmlElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+
+  // 2. PARALLAX SCROLLING EFFECT
+  const parallaxImages = document.querySelectorAll(".parallax-img");
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+
+    // Navbar glass effect
+    if (scrollY > 50) navbar.classList.add("scrolled");
+    else navbar.classList.remove("scrolled");
+
+    // Parallax math
+    parallaxImages.forEach((img) => {
+      let speed = img.getAttribute("data-speed");
+      img.style.transform = `translateY(${scrollY * speed}px)`;
     });
   });
 
-  // 1. AJAX Form Submit untuk Form Kontak
+  // 3. SCROLL REVEAL ANIMATIONS
+  const revealElements = document.querySelectorAll(".reveal-up");
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -100px 0px" },
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+
+  // 4. FETCH DATA (Karya Dinamis)
+  const dynamicContainer = document.getElementById("dynamic-portfolio");
+  if (dynamicContainer) {
+    fetch("php/data.php")
+      .then((res) => res.json())
+      .then((data) => {
+        let htmlContent = "";
+        data.forEach((item) => {
+          htmlContent += `
+              <div class="dynamic-card">
+                <img src="${item.image}" alt="${item.title}">
+                <h4>${item.title}</h4>
+                <p class="text-muted">${item.description}</p>
+              </div>
+            `;
+        });
+        dynamicContainer.innerHTML = htmlContent;
+      })
+      .catch((err) => console.log(err));
+  }
+
+  // 5. AJAX FORM SUBMIT (Kontak)
   const contactForm = document.getElementById("contact-form");
   const formResponse = document.getElementById("form-response");
-
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
-      e.preventDefault(); // Mencegah form reload halaman
-
-      // Ambil data dari input field
+      e.preventDefault();
       const formData = {
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         message: document.getElementById("message").value,
       };
-
-      // Tampilkan tulisan sending
-      formResponse.innerHTML = '<p class="loading">Mengirim pesan...</p>';
-
-      // Kirim via AJAX Post (Fetch API)
+      formResponse.innerHTML =
+        '<p style="color:var(--accent-color); margin-top:1rem;">Mengirim...</p>';
       fetch("php/contact.php", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-        .then((response) => response.json())
+        .then((res) => res.json())
         .then((result) => {
-          if (result.status === "success") {
-            formResponse.innerHTML = `<p class="success">${result.message}</p>`;
-            contactForm.reset(); // Kosongkan form setelah sukses
-          } else {
-            formResponse.innerHTML = `<p class="error">${result.message}</p>`;
-          }
-        })
-        .catch((error) => {
-          formResponse.innerHTML = `<p class="error">Terjadi kesalahan pada server.</p>`;
+          formResponse.innerHTML = `<p style="color:#2e7d32; margin-top:1rem;">${result.message}</p>`;
+          contactForm.reset();
         });
     });
   }

@@ -1,15 +1,20 @@
 <?php
-// Endpoint ini hanya bertugas mengembalikan data JSON untuk AJAX.
+// Endpoint untuk mengembalikan data JSON untuk AJAX.
 header('Content-Type: application/json');
 
 $portfolio_data = [
     [
         "id" => 1,
         "title" => "MY HOME: MY SELF",
-        "description" => "Buku yang mengeksplorasi secara mendalam hubungan antara ruang pribadi dan dampaknya terhadap kesehatan mental kita sehari-hari.",
-        "image" => "img/foto-aji2.jpeg" // Anda bisa mengganti ini nanti dengan file foto cover buku yang sebenarnya jika ada
+        "description" => "Eksplorasi hubungan antara ruang pribadi dan dampaknya terhadap kesehatan mental.",
+        "image" => "img/foto-aji2.jpeg"
+    ],
+    [
+        "id" => 2,
+        "title" => "Jurnal Arsitektur Batin",
+        "description" => "Kumpulan esai pendek tentang menata pikiran melalui seni merapikan rumah.",
+        "image" => "img/foto-aji1.jpeg"
     ]
 ];
 
-// Ubah array PHP ke format JSON
 echo json_encode($portfolio_data);
