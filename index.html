@@ -1,96 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Aji</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Hubungkan CSS di sini -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <!-- Area Header dan Navigasi -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Aji - Penulis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>Aji.</h1>
-            <nav id="navbar">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>Aji.</h1>
+        <nav id="navbar">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <!-- Area Hero / Home -->
     <section id="home" class="hero">
-        <div class="container">
-            <img src="img/foto-aji1.jpeg" alt="Foto Profil Aji" class="profile-img" width="200" style="border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
-            <h2>Halo, Saya Aji</h2>
-            <p>Seorang Web Developer yang antusias dalam membangun antarmuka interaktif.</p>
-            <a href="#contact" class="btn">Hubungi Saya</a>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h2>Halo, Saya Aji</h2>
+          <p>
+            Seorang penulis yang menuangkan gagasan tentang makna ruang pribadi,
+            psikologi, dan perjalanan menemukan diri sendiri melalui kata-kata.
+          </p>
+          <a href="#contact" class="btn">Hubungi Saya</a>
         </div>
+        <div class="hero-image">
+          <img
+            src="img/foto-aji1.jpeg"
+            alt="Foto Profil Aji"
+            class="profile-img"
+          />
+        </div>
+      </div>
     </section>
 
-    <!-- Area About -->
     <section id="about">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <p>Saya sering membuat proyek web interaktif menggunakan HTML, CSS, JavaScript, dan PHP. Mengedepankan desain modern dan UX yang baik.</p>
-        </div>
-    </section>
-
-    <!-- Area Portfolio (Akan diisi via AJAX) -->
-    <section id="portfolio">
-        <div class="container">
-            <h2>Karya Saya</h2>
-            <p>Berikut adalah beberapa karya terbaru saya. Data ini dimuat secara dinamis menggunakan AJAX dan PHP.</p>
-            
-            <div id="portfolio-container" class="grid-container">
-                <!-- Elemen portofolio akan ditempelkan oleh JavaScript di sini -->
-                <p class="loading">Memuat portofolio...</p>
+      <div class="container">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="img-wrapper">
+              <img src="img/foto-aji2.jpeg" alt="Potret Aji" />
             </div>
+          </div>
+          <div class="about-text">
+            <h3>
+              Menulis adalah merawat ingatan dan menjelajahi ruang pikiran.
+            </h3>
+            <p>
+              Saya adalah seorang penulis muda yang berfokus pada isu-isu
+              pengembangan diri dan psikologi sehari-hari.
+            </p>
+            <p>
+              Melalui karya-karya saya, saya berusaha mengeksplorasi hubungan
+              mendalam antara ruang pribadi—baik secara fisik maupun
+              emosional—dan dampaknya terhadap kesehatan mental kita di dunia
+              yang serba cepat ini. Saya percaya bahwa setiap kata memiliki
+              kekuatan untuk menyembuhkan dan memberikan perspektif baru.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Area Kontak -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Karya Saya</h2>
+        <p
+          style="
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+          "
+        >
+          Berikut adalah hasil karya tulisan terbaru saya.
+        </p>
+
+        <div id="portfolio-container" class="grid-container">
+          <!-- Data Portofolio Statis -->
+          <div class="portfolio-item">
+            <img src="img/foto-aji2.jpeg" alt="MY HOME: MY SELF" />
+            <div class="portfolio-info">
+              <h3>MY HOME: MY SELF</h3>
+              <p>
+                Buku yang mengeksplorasi secara mendalam hubungan antara ruang
+                pribadi dan dampaknya terhadap kesehatan mental kita
+                sehari-hari.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
-        <div class="container">
-            <h2>Hubungi Saya</h2>
-            <!-- Form ini akan dikirim tanpa reload menggunakan AJAX -->
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Nama:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Pesan:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Kirim Pesan</button>
-            </form>
-            <div id="form-response"></div>
-        </div>
+      <div class="container">
+        <h2>Hubungi Saya</h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+        <div id="form-response"></div>
+      </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Portofolio Aji. Dibuat untuk tugas akhir.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Portofolio Aji. Dibuat untuk tugas akhir.</p>
+      </div>
     </footer>
 
-    <!-- Hubungkan JavaScript di sini -->
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
